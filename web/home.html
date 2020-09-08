@@ -11,6 +11,18 @@
     h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
     body {font-family: "Open Sans"}
 </style>
+<script src="axios.js"></script>
+<script>
+// using 'simple' js since no babel or other transpilers
+function rollDice(i) {
+    dice = i.id;
+    axios.post('/roll/' + dice, {'dice':dice}).then(
+        function(resp) {
+            console.log(resp);
+        }
+    ).catch(function(err) {console.log(err); });
+}
+</script>
 
 <body class="w3-black">
 
@@ -21,16 +33,11 @@
         <h6>Life to Die</span></h6>
       </header>
 
-    <div class="w3-container w3-pink w3-margin w3-padding-large">
-        <div class="w3-center">
-          <h3>{{dice_name}}</h3>
-          <h5>{{dice_description}}</h5>
-          <button id="{{dice_name}}" class="w3-button w3-white" onclick="rollDice(this)"><b>Roll</b></button>
-        </div>
-    </div>
+  <!-- Roll Button -->
+    {{roll_buttons_entry}}
+  <!-- End Button -->
 
-    <p>{{template_test}}</p>
-    
+  <p>{{template_test}}</p>
 
 </body>
 </html>

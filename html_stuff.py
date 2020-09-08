@@ -32,28 +32,13 @@ def fill_template(func):
 
     return _decorator
 
-for dice in ['dice1','dice2','dice3']:
-    n = int(dice[-1])
-    var = """<!-- Roll Button -->
-        <div class="w3-container w3-pink w3-margin w3-padding-large">
-            <div class="w3-center">
-              <h3>{{dice_name{}}}</h3>
-              <h5>{{dice_description{}}}</h5>
-              <button id="{{dice_name{}}}" class="w3-button w3-white" onclick="rollDice(this)"><b>Roll</b></button>
-            </div>
-        </div>
-      <!-- End Button -->""".format(str(n),str(n),str(n))
 
-
-    print(var)
-
-def add_buttons_to_html(raw_html,dice_dict):
+def build_buttons(dice_list):
     """
-    does something
+    adds buttons to a string variable, and returns it
     """
-
-    var = """"""
-    for dice in dice_dict['dice']:
+    var = ""
+    for dice in dice_list:
         var = var + """<!-- Roll Button -->
             <div class="w3-container w3-pink w3-margin w3-padding-large">
                 <div class="w3-center">
@@ -64,7 +49,4 @@ def add_buttons_to_html(raw_html,dice_dict):
             </div>
           <!-- End Button -->""".format(dice,"{{todo}}",dice)
 
-
-        print(var)
-        
-add_buttons_to_html('meh',{'dice':['dice1','dice2','dice3']})
+    return var
