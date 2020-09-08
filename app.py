@@ -16,5 +16,20 @@ def home_page():
     """
     with open(os.path.join( 'web', 'home.html' ), 'r') as f:
         content = f.read()
-
     return content, {'template_test':'hello world'}
+
+@app.route("/<string:file>")
+def get_asset(file):
+    return send_from_directory('web', file)
+
+@app.route("/roll/<string:dice_name>")
+def roll_dice(dice_name):
+    print(dice_name)
+    return {}, 200
+
+@app.after_request
+def disable_caching(resp):
+    resp.cache_control.max_age  = 300
+    resp.cache_control.public   = True
+    resp.cache_control.no_cache = True
+    return resp

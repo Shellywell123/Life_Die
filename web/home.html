@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
-<body>
+<title>LIFE DIE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="oswald.css">
+<link rel="stylesheet" href="open_sans.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+<style>
+    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+    body {font-family: "Open Sans"}
+</style>
 
-<h1>Life Die</h1>
+<body class="w3-black">
 
-<p>{{template_test}}</p>
+    <div class="w3-content" style="max-width:1600px">
+        <!-- Header -->
+      <header class="w3-container w3-center w3-padding-48 w3-white">
+        <h1 class="w3-xxxlarge"><b>LIFE DIE</b></h1>
+        <h6>Life to Die</span></h6>
+      </header>
+
+    <div class="w3-container w3-pink w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>{{dice_name}}</h3>
+          <h5>{{dice_description}}</h5>
+          <button class="w3-button w3-white" onclick="rollDice(this)"><b>Roll</b></button>
+        </div>
+    </div>
+
+        <p>{{template_test}}</p>
+    </div>
 
 </body>
 </html>

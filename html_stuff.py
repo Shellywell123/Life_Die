@@ -24,6 +24,11 @@ def fill_template(func):
                 num_occurences
             )
 
-        return Response(iter(html_raw), status=304, mimetype='text/html')
+        return Response(
+            iter(html_raw),
+            status=200,
+            mimetype='text/html'
+        )
 
     return _decorator
+
