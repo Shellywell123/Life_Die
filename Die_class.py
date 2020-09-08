@@ -15,9 +15,7 @@ class die():
         """
         returns random element of a list
         """
-
-        choice_index = random.randint(0,len(dice_outcomes)-1)
-        choice = dice_outcomes[choice_index]
+        choice = random.choice(dice_outcomes)
         return choice
 
     #######################################
