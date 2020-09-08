@@ -47,6 +47,6 @@ def build_buttons(dice_list):
                   <button id="{}" class="w3-button w3-white" onclick="rollDice(this)"><b>Roll</b></button>
                 </div>
             </div>
-          <!-- End Button -->""".format(dice,"{{todo}}",dice)
+          <!-- End Button -->""".format(dice,"",dice)
 
     return var

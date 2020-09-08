@@ -3,6 +3,9 @@ import os
 
 from html_stuff import fill_template, build_buttons
 
+from Die_class import *
+d = die()
+
 app = Flask(__name__)
 
 some_dice = ["SKATE DICE", "DRINK DICE", "DICE DICE"]
@@ -33,8 +36,18 @@ def get_asset(file):
 
 @app.route("/roll/<string:dice_name>", methods=['POST'])
 def roll_dice(dice_name):
-    print(dice_name)
-    return {"result":"put your result here"}, 200
+    """
+    execute roll
+    """
+    # will make more elegant once understood
+    if dice_name == "SKATE DICE":
+        return {"result":d.roll_skate_preset()}, 200
+
+    if dice_name == "DRINK DICE":
+        return {"result":d.roll_cocktail_preset()}, 200
+
+    if dice_name == "DICE DICE":
+        return {"result":d.roll_roll_a_dice()}, 200
 
 @app.after_request
 def disable_caching(resp):
