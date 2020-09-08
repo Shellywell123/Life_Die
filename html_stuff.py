@@ -2,7 +2,6 @@ def fill_template(html_raw, key_values):
     """ 
     substitutes html_raw with the key_values dictionary conts 
     """
-    takes dict with n pairs 
 
     for key,values in key_values:
 
