@@ -1,3 +1,4 @@
+from flask import Response
 
 
 def fill_template(func):
@@ -11,7 +12,7 @@ def fill_template(func):
 
         html_raw, key_values = func(*args, **kwargs)
 
-        for key,values in key_values:
+        for key, value in key_values.items():
 
             #count all occurences of key
             num_occurences = html_raw.count(key)
@@ -23,11 +24,6 @@ def fill_template(func):
                 num_occurences
             )
 
-        return html_raw
+        return Response(iter(html_raw), status=304, mimetype='text/html')
 
     return _decorator
-
-
-
-
-
