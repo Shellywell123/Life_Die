@@ -16,9 +16,10 @@
 // using 'simple' js since no babel or other transpilers
 function rollDice(i) {
     dice = i.id;
+    result_field = i.parentElement.children[1]
     axios.post('/roll/' + dice, {'dice':dice}).then(
         function(resp) {
-            console.log(resp);
+            result_field.innerHTML = resp.data.result;
         }
     ).catch(function(err) {console.log(err); });
 }
