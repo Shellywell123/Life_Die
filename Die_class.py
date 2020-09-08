@@ -95,7 +95,7 @@ class die():
         """
         decide wether to go and find a real dice
         """
-        options = ['stop being a lazy piece of shit and go get a real dice','carry on being a lazy piece of shit and using virual dice']
+        options = ['stop being lazy and go get a real dice','carry on being lazy and keep using virtual dice']
         choice  = self.roll_n_die(options)
 
         print(choice)
