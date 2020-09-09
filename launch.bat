@@ -1,0 +1,1 @@
+/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/Chrome.exe http://"$(hostname -I | xargs)":5000/ && flask run -h 0.0.0.0
