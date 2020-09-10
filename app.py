@@ -26,7 +26,7 @@ def home_page():
     btns = build_buttons(some_dice)
 
     return content, {
-    'template_test':'hello world',
+    'template_test':'<a href="https://github.com/Shellywell123/Life_Die">github</a>',
     'roll_buttons_entry':btns
     }
 
