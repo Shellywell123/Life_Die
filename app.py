@@ -8,7 +8,7 @@ d = die()
 
 app = Flask(__name__)
 
-some_dice = ["SKATE DICE", "DRINK DICE", "DICE DICE"]
+some_dice = ["SKATE DICE", "DRINK DICE", "DICE DICE","COIN FLIP"]
 
 @app.route("/")
 @fill_template
@@ -26,7 +26,7 @@ def home_page():
     btns = build_buttons(some_dice)
 
     return content, {
-    'template_test':'<a href="https://github.com/Shellywell123/Life_Die">github</a>',
+    'template_test':'<a href="https://github.com/Shellywell123/Life_Die">Github Project</a>',
     'roll_buttons_entry':btns
     }
 
@@ -39,7 +39,7 @@ def roll_dice(dice_name):
     """
     execute roll
     """
-    # will make more elegant once understood
+    # needs to be a unique statment for each dice in some_dice
     if dice_name == "SKATE DICE":
         return {"result":d.roll_skate_preset()}, 200
 
@@ -48,6 +48,9 @@ def roll_dice(dice_name):
 
     if dice_name == "DICE DICE":
         return {"result":d.roll_roll_a_dice()}, 200
+
+    if dice_name == "COIN FLIP":
+        return {"result":d.flip_coin_preset()}, 200
 
 @app.after_request
 def disable_caching(resp):

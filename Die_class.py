@@ -76,7 +76,7 @@ class die():
         glass          = self.roll_n_die(glasses)
         garnish        = self.roll_n_die(garnishes) 
 
-        output = 'your drink is ...\n{} {} with {} {}, {} and served in a {} with {}'.format(spirit_volume,spirit,mixer_volume,mixer,method,glass,garnish)
+        output = '{} {} with {} {}, {} and served in a {} with {}'.format(spirit_volume,spirit,mixer_volume,mixer,method,glass,garnish)
 
         print(output)
         return output
